@@ -1,16 +1,10 @@
-import React from 'react'
-import 
-{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
- from 'react-icons/bs'
- import 
- { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
- from 'recharts';
- import { PieChart, Pie } from 'recharts';
-function Home() {
 
-    
-     
-  const cardsData = [{'id': 1, 'name': 'Surajit Das', 'cgpa': 6.26},
+import React, { useState } from 'react'
+import { BsSearch } from 'react-icons/bs';
+
+function Studinfo() {
+
+const cardsData = [{'id': 1, 'name': 'Surajit Das', 'cgpa': 6.26},
     {'id': 2, 'name': 'Chandan Ghosh', 'cgpa': 6.99},
     {'id': 3, 'name': 'Samyak Mahudwale Borkar', 'cgpa': 6.24},
     {'id': 4, 'name': 'Pallab Mandal', 'cgpa': 7.94},
@@ -109,118 +103,47 @@ function Home() {
     {'id': 98, 'name': 'Manas Raj', 'cgpa': 8.28}
 ];
 
-const genderData = [
-  { name: "Boys", value: 79 },
-  { name: "Girls", value: 19 },
-];
 
-const internData = [
-  { name: "Interns", value: 12 },
-  { name: "Rest", value: 86 },
-];
+const [info, setinfo] = useState(cardsData);
+const [searchVal, setSearchVal] = useState("");
 
-const COLORS = ["#ff0000", "#ffffff"];
-
-
-  return (
-    <main className='main-container'>
-        <div className="cards">
-    <figure className="card1">
-        <figcaption className="card_title">DEPARTMENT OF INFORMATION TECHNOLOGY</figcaption>
-    </figure>
-</div>
-        <div className='main-title'>
-            <h3>Department at a Glance</h3>
-        </div>
-
-        <div className='main-cards'>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>STRENGTH</h3>
-                    <BsPeopleFill className='card_icon'/>
-                    
-                </div>
-                <h1>99</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>INTERNS</h3>
-                    <BsFillGrid3X3GapFill className='card_icon'/>
-                </div>
-                <h1>12</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>Class Representative</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>1. Archit <br></br>2. Aratrika</h1>
-                
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>Year  Representative</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>Shashwat Pandey</h1>
-            </div>
-        </div>
-
-       
-        <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-
-
-
-<PieChart width={400} height={400}>
-            <Pie
-                data={genderData}
-                cx="50%"
-                cy="50%"
-                outerRadius={150}
-                fill="#8884d8"
-                dataKey="value"
-                label
-            >
-                {genderData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-            </Pie>
-            <Tooltip contentStyle={{
-                backgroundColor: '#fff',   // Change background color
-                color: 'red',             // Change text color
-                borderRadius: '5px',       // Optional: rounded corners
-                padding: '10px'            // Optional: padding inside the tooltip
-            }} />
-            <Legend />
-        </PieChart>
-
-
-      
-        <BarChart width={400} height={400} data={internData} layout='vertical'>
-            
-        <XAxis type="number" />
-            <YAxis dataKey="name" type="category"  />
-            <Tooltip contentStyle={{
-                backgroundColor: '#333',   // Change background color
-                color: '#fff',             // Change text color
-                borderRadius: '5px',       // Optional: rounded corners
-                padding: '10px'            // Optional: padding inside the tooltip
-            }} />
-            <Legend />
-            
-            <Bar dataKey="value" fill="red" />
-        </BarChart>
-
-        
-</div>
-
-
-
-
-        
-        
-    </main>
-  )
+function handleSearchClick() {
+  if (searchVal.trim() === "") {
+    setinfo(cardsData); // Reset to original data
+    return;
+  }
+  const filterBySearch = cardsData.filter((item) =>
+    item.name.toLowerCase().includes(searchVal.toLowerCase()) // Assuming 'name' is the searchable field
+  );
+  setinfo(filterBySearch);
 }
 
-export default Home
+return (
+  <main className="main-container">
+    <h1>Student Informattion</h1>
+    <div>
+      <input className='searchbox'
+        type="text"
+        placeholder="Search by name"
+        value={searchVal}
+        onChange={(e) => setSearchVal(e.target.value)}
+      />
+      <BsSearch onClick={handleSearchClick} style={{ cursor: "pointer" }} className='icon'/>
+    </div>
+    <div>
+      <div className="flexbox">
+        {info.map((card, index) => (
+          <div className="notification" key={index}>
+            <div className="notiglow"></div>
+            <div className="notiborderglow"></div>
+            <div className="notititle">{card.name}</div>
+            <div className="notibody">CGPA: {card.cgpa}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+);
+}
+
+export default Studinfo

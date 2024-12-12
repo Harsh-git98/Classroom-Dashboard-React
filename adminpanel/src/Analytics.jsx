@@ -6,11 +6,10 @@ import
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
  import { PieChart, Pie } from 'recharts';
-function Home() {
 
-    
-     
-  const cardsData = [{'id': 1, 'name': 'Surajit Das', 'cgpa': 6.26},
+
+  
+const cardsData = [{'id': 1, 'name': 'Surajit Das', 'cgpa': 6.26},
     {'id': 2, 'name': 'Chandan Ghosh', 'cgpa': 6.99},
     {'id': 3, 'name': 'Samyak Mahudwale Borkar', 'cgpa': 6.24},
     {'id': 4, 'name': 'Pallab Mandal', 'cgpa': 7.94},
@@ -114,113 +113,139 @@ const genderData = [
   { name: "Girls", value: 19 },
 ];
 
-const internData = [
-  { name: "Interns", value: 12 },
-  { name: "Rest", value: 86 },
+const COLORS = ["#0088FE", "#FF8042"];
+
+const avgCGPA =
+cardsData.reduce((sum, student) => sum + student.cgpa, 0) /
+cardsData.length;
+
+const cgpaRanges = [
+  { range: "5-6", count: 5 },
+  { range: "6-7", count: 15 },
+  { range: "7-8", count: 30 },
+  { range: "8-9", count: 25 },
+  { range: "9-10", count: 10 },
 ];
 
-const COLORS = ["#ff0000", "#ffffff"];
-
-
+function Analytics() {
   return (
     <main className='main-container'>
-        <div className="cards">
-    <figure className="card1">
-        <figcaption className="card_title">DEPARTMENT OF INFORMATION TECHNOLOGY</figcaption>
-    </figure>
-</div>
-        <div className='main-title'>
-            <h3>Department at a Glance</h3>
-        </div>
+    
 
-        <div className='main-cards'>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>STRENGTH</h3>
-                    <BsPeopleFill className='card_icon'/>
-                    
-                </div>
-                <h1>99</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>INTERNS</h3>
-                    <BsFillGrid3X3GapFill className='card_icon'/>
-                </div>
-                <h1>12</h1>
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>Class Representative</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>1. Archit <br></br>2. Aratrika</h1>
-                
-            </div>
-            <div className='card'>
-                <div className='card-inner'>
-                    <h3>Year  Representative</h3>
-                    <BsFillArchiveFill className='card_icon'/>
-                </div>
-                <h1>Shashwat Pandey</h1>
-            </div>
-        </div>
+    <h1>Students Analytics</h1>
+    <div className='main-cards1'>
+                          <div className='card'>
+                              <div className='card-inner'>
+                                  <h3>Average CGPA </h3>
+                                
+                                  
+                              </div>
+                              <h1>7.81</h1>
+                          </div>
+                          
+                          <div className='card'>
+                              <div className='card-inner'>
+                                  <h3>Median CGPA</h3>
+                                  
+                              </div>
+                              <h1>7.98</h1>
+                              
+                          </div>
+                          <div className='card'>
+                              <div className='card-inner'>
+                                  <h3>Highest CGPA</h3>
+                              </div>
+                              <h1>9.79</h1>
+                          </div>
+                      </div>
+              
+    <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' ,marginTop:'8vh'}}>
 
-       
-        <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-
-
-
-<PieChart width={400} height={400}>
-            <Pie
-                data={genderData}
-                cx="50%"
-                cy="50%"
-                outerRadius={150}
-                fill="#8884d8"
-                dataKey="value"
-                label
-            >
-                {genderData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-            </Pie>
-            <Tooltip contentStyle={{
-                backgroundColor: '#fff',   // Change background color
-                color: 'red',             // Change text color
-                borderRadius: '5px',       // Optional: rounded corners
-                padding: '10px'            // Optional: padding inside the tooltip
-            }} />
-            <Legend />
-        </PieChart>
-
-
-      
-        <BarChart width={400} height={400} data={internData} layout='vertical'>
-            
-        <XAxis type="number" />
-            <YAxis dataKey="name" type="category"  />
+    <ResponsiveContainer width="50%" height={400}>
+ <BarChart className='chart' data={cardsData}>
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="name"/>
+            <YAxis />
             <Tooltip contentStyle={{
                 backgroundColor: '#333',   // Change background color
                 color: '#fff',             // Change text color
                 borderRadius: '5px',       // Optional: rounded corners
                 padding: '10px'            // Optional: padding inside the tooltip
             }} />
-            <Legend />
             
-            <Bar dataKey="value" fill="red" />
+            <Bar dataKey="cgpa" fill="red" />
         </BarChart>
-
+        </ResponsiveContainer>
+      
+      
         
-</div>
+        <ResponsiveContainer width="50%" height={400}>
+              <BarChart className='chart' data={cgpaRanges}>
+                  <CartesianGrid stroke="#ffffff" />
+                  <XAxis dataKey="range" />
+                  <YAxis />
+                  <Tooltip  
+                  contentStyle={{
+                    backgroundColor: '#333',   // Change background color
+                    color: '#fff',             // Change text color
+                    borderRadius: '5px',       // Optional: rounded corners
+                    padding: '10px'            // Optional: padding inside the tooltip
+                }}/>
+                  <Legend />
+                  <Bar dataKey="count" fill="#DC143C" />
+              </BarChart>
+              </ResponsiveContainer>
+              <h1>
+                <br />
+                <br /><br />
+              </h1>
+              <br />
+              <br />
+
+                <div>
+                  <h2 className='chart-title' >Bar Chart of Individual Student</h2>
+                  
+              </div>
+      
+              <div>
+                  <h2 className='chart-title'>Histogram of CGPA Ranges</h2>
+                  
+              </div>
+
+              
+
+              <ResponsiveContainer width="100%" height={400}>
+              <LineChart className='chart' data={cardsData}>
+                  <CartesianGrid stroke="#ccc" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip  contentStyle={{
+                backgroundColor: '#333',   // Change background color
+                color: '#fff',             // Change text color
+                borderRadius: '5px',       // Optional: rounded corners
+                padding: '10px'            // Optional: padding inside the tooltip
+            }}  />
+                  <Legend />
+                  <Line type="monotone" dataKey="cgpa" stroke="red" />
+              </LineChart>
+              
+              </ResponsiveContainer>
+              <div>
+                  <h2 className='chart-title'><br></br>Line Chart for CGPA Trends</h2>
+                  
+              </div>
+              
+              
+                     
+                     
 
 
+             
+              
 
-
-        
-        
-    </main>
+      </div>
+      </main>
   )
 }
 
-export default Home
+export default Analytics

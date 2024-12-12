@@ -8,17 +8,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://drive.google.com/drive/folders/1EWSwlGC8_BnF3F7FmtccNVXi2Nejm1pn?usp=drive_link",
@@ -30,17 +30,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/",
@@ -52,17 +52,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://drive.google.com/drive/u/1/folders/1s_IgZa8PwEOagFCGX5PcWIWUa0BvOfre",
@@ -74,17 +74,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://drive.google.com/drive/folders/1-VvzEkwMqCVKwzjFdGZaj4KCs3yW4RT7?usp=drive_link",
@@ -96,17 +96,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://drive.google.com/file/d/1swBvgG-DfbqdACWGBhuVq00EfyHSciGb/view?usp=drive_link",
@@ -118,17 +118,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://drive.google.com/drive/folders/14EwH5cmXp1vMmE_M2bI_Lblo052evTxH?usp=drive_link",
@@ -140,17 +140,17 @@ const cardsData = [
     svgPath: `
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6"
       ></path>
       <path
         stroke-width="1.5"
-        stroke="#cbe6ff"
+        stroke="#ffffff"
         d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z"
       ></path>`,
     link: "https://drive.google.com/drive/folders/1-67KOGY6t3dCDvdJ6GGZY281r80pxARW?usp=drive_link",

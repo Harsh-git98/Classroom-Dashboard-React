@@ -10,6 +10,8 @@ import {
  } from "react-router-dom";
 import Schedule from './Schedule'
 import Resource from './Resource'
+import Studinfo from './Studinfo'
+import Analytics from './Analytics'
 
 
 function App() {
@@ -36,6 +38,11 @@ function App() {
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Schedule/>
     </div>} />
+    <Route path="/analytics" element={<div className='grid-container'>
+      <Header OpenSidebar={OpenSidebar}/>
+      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+      <Analytics/>
+    </div>} />
 
     <Route path="/Resources" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
@@ -46,7 +53,7 @@ function App() {
     <Route path="/Student" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Resource/>
+      <Studinfo/>
     </div>} />
 
 

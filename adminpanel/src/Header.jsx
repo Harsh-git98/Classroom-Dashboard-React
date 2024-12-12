@@ -9,15 +9,13 @@ function Header({OpenSidebar}){
    
         <header className="header">
             <div className="menu-icon">
-                <BsJustify className='icon'onClick={OpenSidebar}/>
+                <BsJustify className='icon big'onClick={OpenSidebar}/>
             </div>
             <div className="header-left">
                 {/* <BsSearch className='icon'/> */}
             </div>
             <div className="header-right">
-                <BsFillBellFill className='icon'/>
-                <BsFillEnvelopeFill className='icon'/>
-                <BsPersonCircle className='icon'/>
+                <h4>#IT ROCKS</h4>
             </div>
         </header>
       
