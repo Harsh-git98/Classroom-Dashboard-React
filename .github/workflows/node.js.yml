@@ -27,15 +27,15 @@ jobs:
 
     - name: Install dependencies for admin panel
       run: |
-        cd admin-panel # Adjust if the admin panel is in a different directory
+        cd adminpanel # Adjust if the admin panel is in a different directory
         npm ci
 
     - name: Build admin panel project
       run: |
-        cd admin-panel # Adjust if needed
+        cd adminpanel # Adjust if needed
         npm run build
 
     - name: Run tests for admin panel
       run: |
-        cd admin-panel # Adjust if needed
+        cd adminpanel # Adjust if needed
         npm test
