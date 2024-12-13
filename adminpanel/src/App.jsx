@@ -1,35 +1,35 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './Header.jsx'
-import Sidebar from './Sidebar.jsx'
-import Home from './Home.jsx'
+import Header from './Header'
+import Sidebar from './Sidebar'
+import Home from './Home'
 import {
   BrowserRouter,
   Routes,
-  Route,Navigate
+  Route
  } from "react-router-dom";
-import Schedule from './Schedule.jsx'
-import Resource from './Resource.jsx';
-import Studinfo from './Studinfo.jsx'
-import Analytics from './Analytics.jsx'
-const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
-
-const OpenSidebar = () => {
-  setOpenSidebarToggle(!openSidebarToggle)
-}
+import Schedule from './Schedule'
+import Resource from './Resource';
+import Studinfo from './Studinfo'
+import Analytics from './Analytics'
 
 function App() {
- 
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
+  
 
   return (
-    <div>
+    
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Home />
-    </div>} />
+    </div>} ></Route>
 
 
 
@@ -37,24 +37,24 @@ function App() {
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Schedule/>
-    </div>} />
+    </div>} ></Route>
     <Route path="/analytics" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Analytics/>
-    </div>} />
+    </div>} ></Route>
 
     <Route path="/Resources" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Resource/>
-    </div>} />
+    </div>} ></Route>
 
     <Route path="/Student" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Studinfo/>
-    </div>} />
+    </div>} ></Route>
 
 
     <Route path='/*' element={<div><hr></hr><h1>Error:404</h1> Page not Found!!<hr></hr></div>}></Route>
@@ -63,7 +63,7 @@ function App() {
 
     </Routes>
   </BrowserRouter>
-  </div>
+
     
   )
 }
