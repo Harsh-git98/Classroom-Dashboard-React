@@ -2,7 +2,8 @@ import React from 'react'
 import 
 {BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
- from 'react-icons/bs'
+ from 'react-icons/bs';
+ import { Link } from 'react-router-dom';
  import { HiAcademicCap } from "react-icons/hi";
  import { HiCalendar } from "react-icons/hi";
 
@@ -19,29 +20,29 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <a href="/">
+                <Link to="/">
                     <BsGrid1X2Fill className='icon'/> Dashboard
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="/analytics">
+                <Link to="/analytics">
                     <BsMenuButtonWideFill className='icon'/> Analytics
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="/Schedule">
+                <Link to="/Schedule">
                     <HiCalendar className='icon'/> Schedule
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="/Resources">
+                <Link to="/Resources">
                     <BsFillGrid3X3GapFill className='icon'/> Resources
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="/Student">
+                <Link to="/Student">
                     <BsPeopleFill className='icon'/> student Info
-                </a>
+                </Link>
             </li>
 
             
