@@ -4,12 +4,12 @@ import Header from './Header'
 import Sidebar from './Sidebar'
 import Home from './Home'
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route
  } from "react-router-dom";
 import Schedule from './Schedule'
-import Resource from './Resource'
+import Resource from './Resource';
 import Studinfo from './Studinfo'
 import Analytics from './Analytics'
 
@@ -22,8 +22,8 @@ function App() {
   }
 
   return (
-    
-    <Router>
+    <div>
+    <BrowserRouter>
     <Routes>
       <Route path="/" element={<div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
@@ -58,7 +58,8 @@ function App() {
 
 
     </Routes>
-  </Router>
+  </BrowserRouter>
+  </div>
     
   )
 }
