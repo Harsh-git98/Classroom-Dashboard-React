@@ -3,11 +3,11 @@ import
 { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
  from 'react-icons/bs'
  import 
- { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
+ { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line ,ScatterChart, Scatter} 
  from 'recharts';
  import { PieChart, Pie } from 'recharts';
 
-
+ import { useMediaQuery } from 'react-responsive';
   
 const cardsData = [{'id': 1, 'name': 'Surajit Das', 'cgpa': 6.26},
     {'id': 2, 'name': 'Chandan Ghosh', 'cgpa': 6.99},
@@ -107,7 +107,13 @@ const cardsData = [{'id': 1, 'name': 'Surajit Das', 'cgpa': 6.26},
     {'id': 97, 'name': 'Ritik Kumar', 'cgpa': 8.78},
     {'id': 98, 'name': 'Manas Raj', 'cgpa': 8.28}
 ];
-
+const newData=[...cardsData];
+const rankedData = newData
+    .sort((a, b) => b.cgpa - a.cgpa) // Sort by CGPA descending
+    .map((student, index) => ({
+        ...student,
+        rank: index + 1 // Assign rank based on position
+    }));
 const genderData = [
   { name: "Boys", value: 79 },
   { name: "Girls", value: 19 },
@@ -127,7 +133,14 @@ const cgpaRanges = [
   { range: "9-10", count: 10 },
 ];
 
+
+
+
 function Analytics() {
+
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+    const containerWidth = isMobile ? '100%' : '50%';
+    
   return (
     <main className='main-container'>
     
@@ -158,10 +171,34 @@ function Analytics() {
                               <h1>9.79</h1>
                           </div>
                       </div>
+                      
               
     <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' ,marginTop:'8vh'}}>
 
-    <ResponsiveContainer width="50%" height={400}>
+       
+    <ResponsiveContainer width="100%" height={400}>
+              <LineChart className='chart' data={cardsData}>
+                  <CartesianGrid stroke="#ccc" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip  contentStyle={{
+                backgroundColor: '#333',   // Change background color
+                color: '#fff',             // Change text color
+                borderRadius: '5px',       // Optional: rounded corners
+                padding: '10px'            // Optional: padding inside the tooltip
+            }}  />
+                  <Legend />
+                  <Line type="monotone" dataKey="cgpa" stroke="red" />
+              </LineChart>
+              
+              </ResponsiveContainer>
+              <div>
+                  <h2 className='chart-title1'><br></br>Line Chart for CGPA Trends</h2>
+                  
+              </div>
+
+
+    {/* <ResponsiveContainer width={containerWidth} height={400}>
  <BarChart className='chart' data={cardsData}>
             <CartesianGrid stroke="#ccc" />
             <XAxis dataKey="name"/>
@@ -175,11 +212,43 @@ function Analytics() {
             
             <Bar dataKey="cgpa" fill="red" />
         </BarChart>
+        </ResponsiveContainer> */}
+        <ResponsiveContainer width={containerWidth} height={400}>
+        <BarChart className='chart' data={rankedData}>
+                <CartesianGrid stroke="#ccc" />
+                <XAxis 
+                    dataKey="rank" 
+                    label={{ value: 'NAME', position: 'insideBottom', offset: -5 }} 
+                    tickFormatter={(tick) => {
+                        // Format the X-Axis to show name instead of rank
+                        const student = rankedData.find(item => item.rank === tick);
+                        return student ? student.name : '';
+                    }}
+                />
+                <YAxis label={{ value: 'RANK LIST', angle: -90, position: 'insideLeft' }} name='Details' />
+                <Tooltip 
+                    contentStyle={{
+                        backgroundColor: '#333', // Change background color
+                        color: '#fff',           // Change text color
+                        borderRadius: '5px',     // Rounded corners
+                        padding: '10px'          // Padding inside the tooltip
+                    }} 
+                    formatter={(value, name, props) => {
+                        // Show rank and name in tooltip
+                        const student = rankedData.find(item => item.cgpa === value);
+                        if (student) {
+                            return [`Rank: ${student.rank}, Name: ${student.name}, CGPA: ${value}`];
+                        }
+                        return value;
+                    }}
+                />
+                <Bar dataKey="cgpa" name="Details" fill="red" />
+            </BarChart>
         </ResponsiveContainer>
-      
+
       
         
-        <ResponsiveContainer width="50%" height={400}>
+        <ResponsiveContainer width={containerWidth} height={400}>
               <BarChart className='chart' data={cgpaRanges}>
                   <CartesianGrid stroke="#ffffff" />
                   <XAxis dataKey="range" />
@@ -203,7 +272,7 @@ function Analytics() {
               <br />
 
                 <div>
-                  <h2 className='chart-title' >Bar Chart of Individual Student</h2>
+                  <h2 className='chart-title' >Rank Chart of Class</h2>
                   
               </div>
       
@@ -214,26 +283,7 @@ function Analytics() {
 
               
 
-              <ResponsiveContainer width="100%" height={400}>
-              <LineChart className='chart' data={cardsData}>
-                  <CartesianGrid stroke="#ccc" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip  contentStyle={{
-                backgroundColor: '#333',   // Change background color
-                color: '#fff',             // Change text color
-                borderRadius: '5px',       // Optional: rounded corners
-                padding: '10px'            // Optional: padding inside the tooltip
-            }}  />
-                  <Legend />
-                  <Line type="monotone" dataKey="cgpa" stroke="red" />
-              </LineChart>
               
-              </ResponsiveContainer>
-              <div>
-                  <h2 className='chart-title'><br></br>Line Chart for CGPA Trends</h2>
-                  
-              </div>
               
               
                      

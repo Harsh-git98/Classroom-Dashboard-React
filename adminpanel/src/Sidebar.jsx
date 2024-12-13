@@ -17,6 +17,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
             </div>
             <span className='card_icon close_icon' onClick={OpenSidebar}>X</span>
         </div>
+        <div className="sidebarflex">
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
@@ -48,7 +49,15 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
             
             
         </ul>
+        <footer>
+               <a href='https://www.linkedin.com/in/harshrjn/'>Built with &#10084; by Harsh Ranjan</a>
+        </footer>
+
+        </div>
+        
+        
     </aside>
+    
   )
 }
 
