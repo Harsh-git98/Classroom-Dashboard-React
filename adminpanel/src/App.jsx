@@ -1,25 +1,25 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './Header'
-import Sidebar from './Sidebar'
-import Home from './Home'
+import Header from './Header.jsx'
+import Sidebar from './Sidebar.jsx'
+import Home from './Home.jsx'
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,Navigate
  } from "react-router-dom";
-import Schedule from './Schedule'
-import Resource from './Resource';
-import Studinfo from './Studinfo'
-import Analytics from './Analytics'
+import Schedule from './Schedule.jsx'
+import Resource from './Resource.jsx';
+import Studinfo from './Studinfo.jsx'
+import Analytics from './Analytics.jsx'
+const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
+const OpenSidebar = () => {
+  setOpenSidebarToggle(!openSidebarToggle)
+}
 
 function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
-
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+ 
 
   return (
     <div>
@@ -55,6 +55,10 @@ function App() {
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Studinfo/>
     </div>} />
+
+
+    <Route path='/*' element={<div><hr></hr><h1>Error:404</h1> Page not Found!!<hr></hr></div>}></Route>
+
 
 
     </Routes>
