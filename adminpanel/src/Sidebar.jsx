@@ -45,6 +45,11 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
                     <BsPeopleFill className='icon'/> student Info
                 </Link>
             </li>
+            {/* <li className='sidebar-list-item'>
+                <Link to="/admin">
+                    <BsPeopleFill className='icon'/> admin
+                </Link>
+            </li> */}
 
             
             

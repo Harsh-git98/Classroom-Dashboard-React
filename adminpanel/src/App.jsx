@@ -12,6 +12,9 @@ import Schedule from './Schedule'
 import Resource from './Resource';
 import Studinfo from './Studinfo'
 import Analytics from './Analytics'
+import { HiLogin } from 'react-icons/hi'
+import Login from './Login.jsx'
+
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
@@ -55,7 +58,13 @@ function App() {
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Studinfo/>
     </div>} ></Route>
-
+    
+    <Route path="/admin" element={<div className='grid-container'>
+      <Header OpenSidebar={OpenSidebar}/>
+      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+      <Login/>
+  
+    </div>} ></Route>
 
     <Route path='/*' element={<div><hr></hr><h1>Error:404</h1> Page not Found!!<hr></hr></div>}></Route>
 
