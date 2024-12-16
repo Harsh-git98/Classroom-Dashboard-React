@@ -26,6 +26,10 @@ import { BsColumnsGap } from 'react-icons/bs'
 function Admin() {
   return (
     <div>
+      <form>
+        <label>CHANGE YR</label>
+        <input type="text" name="yrname" id="yr" />
+      </form>
       
     </div>
   )
