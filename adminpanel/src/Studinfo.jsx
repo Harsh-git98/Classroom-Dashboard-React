@@ -120,7 +120,7 @@ function handleSearchClick() {
 
 return (
   <main className="main-container">
-    <h1>Student Informattion</h1>
+    <h1>Student Information</h1>
     <div>
       <input className='searchbox'
         type="text"
