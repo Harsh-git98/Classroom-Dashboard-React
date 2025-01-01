@@ -24,41 +24,46 @@ function Schedule() {
           <tr>
             <td className="highlight"><b>Monday</b></td>
             <td></td>
-            <td colSpan="3">Algo LAB</td>
+            <td></td>
+          
+            
+            <td colSpan="2">S/W eng</td>
             
             
             <td rowSpan="6" className="special"><b>LUNCH</b></td>
-            <td colSpan="2">OS</td>
+            <td colSpan="2">Comp Net</td>
           </tr>
           <tr>
             <td className="highlight"><b>Tuesday</b></td>
            
             
-            <td colSpan="2">microprocessor</td>
-            <td colSpan="2">OS</td>
-            <td colSpan="3">DBMS LAB</td>
+            <td colSpan="1">Compiler</td>
+            <td colSpan="3">S/W labs</td>
+            <td colSpan="2">Comp Net</td>
+            <td colSpan="1">HPCA</td>
           </tr>
           <tr>
             <td className="highlight"><b>Wednesday</b></td>
-            <td colSpan="2">ICT</td>
-            <td colSpan="2">DBMS</td>
-            <td colSpan="1">microprocessor</td>
-            <td colSpan="2">ALGO</td>
+            <td></td>
+            <td colSpan="1">S/W engg</td>
+            <td colSpan="2">ML</td>
+            
           </tr>
           <tr>
             <td className="highlight"><b>Thursday</b></td>
             <td></td>
-            <td colSpan="3">OS LAB</td>
-            <td colSpan="2">Algorithm</td>
+          <td></td>
+            <td colSpan="2">ML</td>
+            <td colSpan="3">CN Lab</td>
           </tr>
           <tr>
             <td className="highlight"><b>Friday</b></td>
-            <td ></td>
-            <td colSpan="3">MICRO LAB</td>
-            <td colSpan="1">ICT</td>
+
+            <td colSpan="2">Compliler</td>
+            <td colSpan="2">HPCA</td>
             
            
-            <td colSpan="2">DBMS</td>
+            <td colSpan="3">ML Lab</td>
           </tr>
           
         </tbody>
